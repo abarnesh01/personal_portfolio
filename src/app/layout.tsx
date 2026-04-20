@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "A cinematic developer portfolio.",
 };
 
+import CursorGlow from "@/components/CursorGlow";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        <CursorGlow />
+        {children}
+      </body>
     </html>
   );
 }

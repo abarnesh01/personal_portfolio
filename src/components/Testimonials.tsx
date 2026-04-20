@@ -5,28 +5,28 @@ import { useState } from "react";
 
 const TESTIMONIALS = [
   {
-    quote: "Fawaz delivered exceptional code on the Elite Hotel project. His understanding of microservices is top-notch.",
-    name: "Alex Morgan",
-    role: "Project Manager, Elite Hotel",
-    initials: "AM",
+    quote: "The PII Masking tool Abarnesh built is incredibly accurate. It has significantly enhanced our data privacy workflow.",
+    name: "Security Lead",
+    role: "KGiSL Tech Solutions",
+    initials: "SL",
   },
   {
-    quote: "The Nxtcart platform is blazing fast. Fawaz's optimization skills significantly improved our conversion rates.",
-    name: "Sarah Chen",
-    role: "CTO, Nxtcart",
-    initials: "SC",
+    quote: "His proactive approach to identifying network vulnerabilities is impressive. A highly skilled future security architect.",
+    name: "Cyber Mentor",
+    role: "Open Source Contributor",
+    initials: "CM",
   },
   {
-    quote: "A true professional. He transformed our messy codebase into a clean, scalable architecture.",
-    name: "David Smith",
-    role: "Lead Dev, TechStart",
-    initials: "DS",
+    quote: "The Network Monitoring dashboard provides exactly the kind of real-time insights our ops team needed.",
+    name: "Project Lead",
+    role: "Civic AI Initiative",
+    initials: "PL",
   },
   {
-    quote: "Incredible attention to detail. The UI animations he implemented made our app feel world-class.",
-    name: "Emily Davis",
-    role: "Product Designer",
-    initials: "ED",
+    quote: "Abarnesh combines deep technical security knowledge with a great eye for modern, functional UI design.",
+    name: "UI Engineer",
+    role: "Design Collective",
+    initials: "UE",
   },
 ];
 
@@ -63,69 +63,70 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative z-20 bg-[#0a0a0a] py-32 overflow-hidden" id="testimonials">
-      {/* Background Ambience - Different position for variety */}
+    <section className="relative z-20 bg-[#050505] py-32 overflow-hidden grid-bg" id="testimonials">
+      {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-         <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]" />
-         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-cyan-600/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-600/[0.03] rounded-full blur-[100px]" />
       </div>
 
-       <div className="container mx-auto px-6 mb-16 text-center relative z-10">
-            <motion.h2 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
-            >
-                Kind <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400">Words</span>
-            </motion.h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-                Feedback from clients and collaborators I've had the pleasure of working with.
-            </p>
-            
-            <motion.button
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              onClick={() => setIsModalOpen(true)}
-              className="px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white transition-all text-sm font-medium backdrop-blur-sm"
-            >
-              Write a Review
-            </motion.button>
-       </div>
+      <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-cyan-400 font-mono text-sm uppercase tracking-[0.3em] mb-4">Integrity Validation</p>
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+            Peer <span className="text-gradient-cyan">Insights</span>
+          </h2>
+          <p className="text-gray-500 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+            Correlated feedback from security researchers, developers, and industry mentors.
+          </p>
 
-      <div className="relative w-full overflow-hidden mask-linear-fade">
-         {/* Mask gradient for fade effect on edges */}
-         <div className="absolute top-0 left-0 w-32 h-full z-20 bg-linear-to-r from-[#121212] to-transparent" />
-         <div className="absolute top-0 right-0 w-32 h-full z-20 bg-linear-to-l from-[#121212] to-transparent" />
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-8 py-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-cyan-500/10 hover:border-cyan-500/30 text-white transition-all text-xs font-mono uppercase tracking-widest backdrop-blur-sm"
+          >
+            [ New Feedback Entry ]
+          </button>
+        </motion.div>
+      </div>
 
-        <div className="flex w-max">
+      <div className="relative w-full overflow-hidden">
+        {/* Edge masks */}
+        <div className="absolute top-0 left-0 w-40 h-full z-20 bg-linear-to-r from-[#050505] to-transparent" />
+        <div className="absolute top-0 right-0 w-40 h-full z-20 bg-linear-to-l from-[#050505] to-transparent" />
+
+        <div className="flex w-max lg:hover:[animation-play-state:paused]">
           <motion.div
-            className="flex gap-8 px-4"
+            className="flex gap-6 px-4"
             animate={{ x: "-50%" }}
             transition={{
-              duration: 30,
+              duration: 35,
               ease: "linear",
               repeat: Infinity,
             }}
           >
-            {[...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS].map((item, index) => (
+            {[...TESTIMONIALS, ...TESTIMONIALS].map((item, index) => (
               <div
                 key={index}
-                className="w-[350px] md:w-[450px] p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shrink-0"
+                className="w-[380px] md:w-[480px] p-8 rounded-2xl glass-card shrink-0 group border border-white/5"
               >
-                 <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg">
-                        {item.initials}
-                    </div>
-                    <div>
-                        <h4 className="text-white font-bold text-lg">{item.name}</h4>
-                        <p className="text-sm text-gray-400">{item.role}</p>
-                    </div>
-                 </div>
-                 <p className="text-gray-300 italic leading-relaxed">
-                    "{item.quote}"
-                 </p>
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono font-bold text-lg">
+                    {item.initials}
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg group-hover:text-cyan-300 transition-colors">{item.name}</h4>
+                    <p className="text-xs font-mono text-cyan-500/60 uppercase tracking-widest tracking-tighter">{item.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-400 text-sm leading-relaxed relative sm:pl-4">
+                  <span className="absolute left-0 top-0 text-cyan-400/20 text-4xl font-serif leading-none">"</span>
+                  {item.quote}
+                </p>
               </div>
             ))}
           </motion.div>
@@ -134,80 +135,83 @@ export default function Testimonials() {
 
       <AnimatePresence>
         {isModalOpen && (
-          <div className="absolute inset-0 z-50 flex items-center justify-center px-4 h-full">
+          <div className="fixed inset-0 z-100 flex items-center justify-center px-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsModalOpen(false)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/90 backdrop-blur-md"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-lg bg-[#1a1a1a] border border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden"
+              exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              className="relative w-full max-w-lg glass-card p-10 shadow-[0_0_50px_rgba(6,182,212,0.15)] rounded-2xl"
             >
-                {/* Background Glow */}
-                <div className="absolute top-[-50%] left-[-50%] w-full h-full bg-blue-500/10 blur-[100px] pointer-events-none" />
-                <div className="absolute bottom-[-50%] right-[-50%] w-full h-full bg-purple-500/10 blur-[100px] pointer-events-none" />
+              <h3 className="text-2xl font-bold font-mono text-white mb-2 uppercase tracking-tight">Secure Entry</h3>
+              <p className="text-gray-500 text-sm mb-8 font-mono tracking-tighter">Enter testimonial parameters below.</p>
 
-              <h3 className="text-2xl font-bold text-white mb-2 relative z-10">Submit a Testimonial</h3>
-              <p className="text-gray-400 mb-6 relative z-10">Your feedback helps me improve and grow. Thank you!</p>
-
-              <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                  <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-500/60 mb-2">Identifier</label>
                   <input
                     type="text"
                     required
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-hidden focus:border-blue-500 transition-colors"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all font-mono text-sm"
+                    placeholder="Real name or handle"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Role / Company</label>
+                  <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-500/60 mb-2">Designation</label>
                   <input
                     type="text"
                     required
                     value={formState.role}
                     onChange={(e) => setFormState({ ...formState, role: e.target.value })}
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-hidden focus:border-blue-500 transition-colors"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all font-mono text-sm"
+                    placeholder="Role / Nexus"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Testimonial</label>
+                  <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-500/60 mb-2">Encrypted Payload</label>
                   <textarea
                     required
                     rows={4}
                     value={formState.quote}
                     onChange={(e) => setFormState({ ...formState, quote: e.target.value })}
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-hidden focus:border-blue-500 transition-colors resize-none"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all font-mono text-sm resize-none"
+                    placeholder="Data entry..."
                   />
                 </div>
 
-                <div className="flex gap-3 pt-2">
-                    <button
-                        type="button"
-                        onClick={() => setIsModalOpen(false)}
-                        className="flex-1 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-medium transition-colors"
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="flex-1 py-3 rounded-xl bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
-                    >
-                         {isSubmitting ? "Sending..." : submitStatus === "success" ? "Sent!" : submitStatus === "error" ? "Retry" : "Submit"}
-                    </button>
+                <div className="flex gap-4 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(false)}
+                    className="flex-1 py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white font-mono text-xs uppercase tracking-widest transition-all"
+                  >
+                    Abort
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-black font-bold text-xs uppercase tracking-widest transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                  >
+                    {isSubmitting ? "Transmitting..." : submitStatus === "success" ? "Received" : "Transmit"}
+                  </button>
                 </div>
               </form>
+
+              {/* Corner accent */}
+              <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-cyan-500/20" />
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+      <div className="absolute top-0 left-0 right-0 section-divider" />
     </section>
   );
 }
