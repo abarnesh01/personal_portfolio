@@ -59,7 +59,7 @@ const cardVariants = {
 
 export default function Skills() {
   return (
-    <section className="relative z-20 bg-[#050505] py-32 px-4 md:px-12 overflow-hidden grid-bg" id="skills">
+    <section className="relative z-20 bg-transparent py-32 px-4 md:px-12 overflow-hidden" id="skills">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-purple-600/[0.04] rounded-full blur-[150px]" />

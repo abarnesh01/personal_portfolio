@@ -68,7 +68,7 @@ export default function Projects() {
     const hasMore = visibleCount < projects.length;
 
     return (
-        <section className="relative z-20 bg-[#050505] min-h-screen py-32 px-4 md:px-12 overflow-hidden grid-bg" id="projects">
+        <section className="relative z-20 bg-transparent min-h-screen py-32 px-4 md:px-12 overflow-hidden" id="projects">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-cyan-600/[0.03] rounded-full blur-[120px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-blue-600/[0.03] rounded-full blur-[100px]" />

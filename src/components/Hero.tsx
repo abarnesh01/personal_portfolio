@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#050505] overflow-hidden grid-bg" id="home">
+    <section className="relative min-h-screen flex items-center justify-center bg-transparent overflow-hidden" id="home">
       {/* Background Ambient Orbs */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] bg-cyan-500/[0.04] rounded-full blur-[150px] animate-pulse" />

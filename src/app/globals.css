@@ -16,6 +16,51 @@ html {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
+
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-spin-very-slow: spin 60s linear infinite;
+  --animate-pulse-slow: pulse 8s ease-in-out infinite;
+  --animate-float: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-30px) translateX(15px);
+  }
+
+  50% {
+    transform: translateY(-15px) translateX(25px);
+  }
+
+  75% {
+    transform: translateY(15px) translateX(-15px);
+  }
+}
+
+.jarvis-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.jarvis-radial {
+  background: radial-gradient(circle at center, rgba(34, 211, 238, 0.1) 0%, transparent 80%);
+}
+
+.radar-ring {
+  border: 1px solid rgba(34, 211, 238, 0.04);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 body {

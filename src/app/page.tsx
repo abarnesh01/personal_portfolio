@@ -28,7 +28,7 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <main className="bg-[#050505] min-h-screen text-white overflow-x-hidden noise-bg">
+    <main className="bg-transparent min-h-screen text-white overflow-x-hidden noise-bg">
       <IntroLoader onComplete={() => setIsLoaded(true)} />
 
       <AnimatePresence>
@@ -44,7 +44,7 @@ export default function Home() {
             <Hero />
 
             {/* 3D Avatar Section */}
-            <section className="relative bg-[#050505] py-20 overflow-hidden grid-bg" id="avatar">
+            <section className="relative bg-transparent py-20 overflow-hidden" id="avatar">
               <div className="max-w-4xl mx-auto text-center mb-8">
                 <motion.p
                   initial={{ opacity: 0 }}

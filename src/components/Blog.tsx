@@ -33,7 +33,7 @@ const ARTICLES = [
 
 export default function Blog() {
   return (
-    <section className="relative z-20 bg-[#050505] py-32 px-4 md:px-12 overflow-hidden grid-bg" id="blog">
+    <section className="relative z-20 bg-transparent py-32 px-4 md:px-12 overflow-hidden" id="blog">
       {/* Background Ambience */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[20%] w-[600px] h-[600px] bg-cyan-600/[0.03] rounded-full blur-[120px]" />

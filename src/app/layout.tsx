@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 };
 
 import CursorGlow from "@/components/CursorGlow";
+import JarvisBackground from "@/components/JarvisBackground";
 
 export default function RootLayout({
   children,
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
+        <JarvisBackground />
         <CursorGlow />
         {children}
       </body>
