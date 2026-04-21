@@ -47,7 +47,10 @@ export default function SpotlightCard({
             <div
                 className="pointer-events-none absolute -inset-px transition duration-300 z-30"
                 style={{
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${glowColor}, transparent 40%)`,
+                    background: `
+                        radial-gradient(500px circle at ${position.x}px ${position.y}px, ${glowColor}, transparent 60%),
+                        radial-gradient(250px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255, 0.08), transparent 50%)
+                    `,
                     opacity,
                 }}
             />

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import SpotlightCard from "./SpotlightCard";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -102,63 +103,75 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="glass-card rounded-2xl p-8 md:p-10 border border-white/10"
+            className="relative"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-xs font-mono uppercase tracking-[0.2em] text-cyan-500/60 mb-2">Identifier (Name)</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formState.name}
-                  onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all font-mono text-sm"
-                  placeholder="USER_ALPHA"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-xs font-mono uppercase tracking-[0.2em] text-cyan-500/60 mb-2">Comms Channel (Email)</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all font-mono text-sm"
-                  placeholder="contact@entity.id"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-xs font-mono uppercase tracking-[0.2em] text-cyan-500/60 mb-2">Payload (Message)</label>
-                <textarea
-                  id="message"
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  rows={4}
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all font-mono text-sm resize-none"
-                  placeholder="Awaiting data upload..."
-                  required
-                />
-              </div>
+            <SpotlightCard className="rounded-3xl" glowColor="rgba(34, 211, 238, 0.2)">
+              <div className="premium-card p-8 md:p-10 border border-white/5 relative overflow-hidden">
+                <div className="premium-card-border" />
+                <form onSubmit={handleSubmit} className="space-y-6 relative z-10 font-mono">
+                  <div>
+                    <label htmlFor="name" className="block text-[10px] uppercase tracking-[0.3em] text-cyan-400 mb-2">Identifier (Name)</label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={formState.name}
+                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all text-sm tracking-widest placeholder:opacity-30"
+                      placeholder="ENTER_NAME"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-[10px] uppercase tracking-[0.3em] text-cyan-400 mb-2">Comms_Channel (Email)</label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={formState.email}
+                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all text-sm tracking-widest placeholder:opacity-30"
+                      placeholder="USER@NETWORK.NET"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-[10px] uppercase tracking-[0.3em] text-cyan-400 mb-2">Payload (Message)</label>
+                    <textarea
+                      id="message"
+                      value={formState.message}
+                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                      rows={5}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-hidden focus:border-cyan-500/50 transition-all text-sm tracking-widest resize-none placeholder:opacity-30"
+                      placeholder="AWAITING_INPUT..."
+                      required
+                    />
+                  </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl text-black font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2 transform active:scale-[0.98]"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                    Transmitting...
-                  </>
-                ) : isSuccess ? (
-                  "Transmission Received"
-                ) : (
-                  "Initialize Transmission"
-                )}
-              </button>
-            </form>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="group relative w-full py-5 bg-transparent text-white font-bold rounded-xl overflow-hidden transition-all duration-300"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 transition-transform duration-500 group-hover:scale-105" />
+                    <span className="relative z-10 flex items-center justify-center gap-3 tracking-[0.2em] uppercase text-xs">
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Transmitting...
+                        </>
+                      ) : isSuccess ? (
+                        "Transmission_Confirmed"
+                      ) : (
+                        "Initialize_Transmission"
+                      )}
+                    </span>
+                  </button>
+                </form>
+
+                {/* HUD Corner Decor */}
+                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-cyan-500/20 pointer-events-none" />
+                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-cyan-500/20 pointer-events-none" />
+              </div>
+            </SpotlightCard>
           </motion.div>
         </div>
 

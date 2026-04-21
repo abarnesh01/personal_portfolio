@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function JarvisBackground() {
-    // Generate random particles
-    const particles = useMemo(() => {
-        return Array.from({ length: 30 }).map((_, i) => ({
+    const [particles, setParticles] = React.useState<{ id: number; left: string; top: string; size: number; duration: number; delay: number }[]>([]);
+
+    React.useEffect(() => {
+        const generatedParticles = Array.from({ length: 30 }).map((_, i) => ({
             id: i,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -14,6 +15,7 @@ export default function JarvisBackground() {
             duration: Math.random() * 20 + 10,
             delay: Math.random() * 5,
         }));
+        setParticles(generatedParticles);
     }, []);
 
     return (
@@ -24,8 +26,8 @@ export default function JarvisBackground() {
             {/* 2. Radial Glow Layer */}
             <div className="absolute inset-0 jarvis-radial opacity-60 animate-pulse-slow" />
 
-            {/* 3. Grid Lines Layer */}
-            <div className="absolute inset-0 jarvis-grid opacity-20" />
+            {/* 3. Grid Lines Layer (Animated Drift) */}
+            <div className="absolute inset-0 grid-bg opacity-20" />
 
             {/* 4. Radar / Rotating Rings Layer */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
