@@ -2,30 +2,27 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Scrollytelling Portfolio",
-  description: "A cinematic developer portfolio.",
+  title: "Abarnesh | Creative Full Stack Developer",
+  description: "Senior Full Stack Developer specializing in premium web experiences using Next.js, React, and modern UI/UX design.",
+  keywords: ["Next.js", "React", "Full Stack Developer", "Portfolio", "Web Development", "Framer Motion"],
+  openGraph: {
+    title: "Abarnesh | Creative Full Stack Developer",
+    description: "Premium Portfolio showcasing modern web development projects.",
+    type: "website",
+  },
 };
-
-import CursorGlow from "@/components/CursorGlow";
-import JarvisBackground from "@/components/JarvisBackground";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
-        <JarvisBackground />
-        <CursorGlow />
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} bg-background text-foreground antialiased`}>
         {children}
       </body>
     </html>
