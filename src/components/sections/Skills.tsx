@@ -11,8 +11,8 @@ import {
     Database,
     Smartphone,
     Cloud,
-    Framer,
-    Terminal
+    Terminal,
+    Sparkles
 } from "lucide-react";
 
 const skills = [
@@ -23,7 +23,7 @@ const skills = [
     { name: "TypeScript", icon: <FileJson />, level: 90, color: "text-blue-500" },
     { name: "Node.js", icon: <Terminal />, level: 88, color: "text-green-400" },
     { name: "Database", icon: <Database />, level: 80, color: "text-orange-400" },
-    { name: "Framer Motion", icon: <Framer />, level: 92, color: "text-pink-400" },
+    { name: "Framer Motion", icon: <Sparkles />, level: 92, color: "text-pink-400" },
     { name: "Cloud Services", icon: <Cloud />, level: 75, color: "text-indigo-400" },
     { name: "Mobile Dev", icon: <Smartphone />, level: 70, color: "text-red-400" },
 ];
