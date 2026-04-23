@@ -2,6 +2,7 @@
 
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import AvatarScene from "./AvatarScene";
 
 export default function Hero() {
   return (
@@ -109,59 +110,9 @@ export default function Hero() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="flex-shrink-0 z-20"
         >
-          <Tilt
-            tiltMaxAngleX={15}
-            tiltMaxAngleY={15}
-            perspective={1500}
-            transitionSpeed={2500}
-            scale={1.05}
-            gyroscope={true}
-          >
-            <div className="relative w-[280px] h-[380px] sm:w-[320px] sm:h-[420px] md:w-[400px] md:h-[540px] hologram-container group">
-              {/* Complex Outer Glow Layers */}
-              <div className="absolute inset-[-40px] bg-cyan-500/[0.1] rounded-[3rem] blur-[80px] animate-pulse" />
-              <div className="absolute inset-[-10px] bg-blue-500/[0.05] rounded-[2rem] blur-[40px] group-hover:bg-cyan-400/[0.1] transition-all duration-700" />
-
-              {/* Hologram Framework */}
-              <div className="absolute inset-0 border border-white/5 rounded-2xl z-0" />
-
-              {/* Main Image */}
-              <img
-                src="/profile.jpg"
-                alt="Abarnesh S"
-                className="relative z-10 w-full h-full object-cover object-[50%_20%] rounded-2xl hologram 
-                         shadow-[0_0_50px_rgba(6,182,212,0.3),0_0_100px_rgba(6,182,212,0.1)]
-                         border border-white/10"
-              />
-
-              {/* Advanced Scanning Light Strip */}
-              <motion.div
-                animate={{ top: ['-10%', '110%'] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-x-0 h-4 bg-gradient-to-b from-transparent via-cyan-400/40 to-transparent z-30 pointer-events-none blur-sm"
-              />
-
-              <motion.div
-                animate={{ top: ['-10%', '110%'] }}
-                transition={{ duration: 4.1, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-x-0 h-1 bg-cyan-300/60 z-30 pointer-events-none shadow-[0_0_15px_#22d3ee]"
-              />
-
-              {/* Static Scanline Texture Overlay */}
-              <div className="absolute inset-0 scanline pointer-events-none rounded-2xl overflow-hidden z-25 opacity-40 mix-blend-overlay" />
-
-              {/* Corner High-Tech Brackets */}
-              <div className="absolute top-4 left-4 w-10 h-10 border-t-2 border-l-2 border-cyan-400/60 z-40" />
-              <div className="absolute top-4 right-4 w-10 h-10 border-t-2 border-r-2 border-cyan-400/60 z-40" />
-              <div className="absolute bottom-4 left-4 w-10 h-10 border-b-2 border-l-2 border-cyan-400/60 z-40" />
-              <div className="absolute bottom-4 right-4 w-10 h-10 border-b-2 border-r-2 border-cyan-400/60 z-40" />
-
-              {/* Tech Label */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black/80 border border-cyan-500/30 px-4 py-1 rounded-full z-50 backdrop-blur-md">
-                <p className="text-[9px] font-mono text-cyan-400 uppercase tracking-[0.4em]">Subj_ID: Abarnesh_01</p>
-              </div>
-            </div>
-          </Tilt>
+          <div className="relative w-[320px] h-[450px] sm:w-[400px] sm:h-[550px] md:w-[500px] md:h-[650px] z-20">
+            <AvatarScene />
+          </div>
         </motion.div>
       </div>
 
