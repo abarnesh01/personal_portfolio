@@ -85,7 +85,7 @@ export default function IntroLoader({ onComplete }: { onComplete: () => void }) 
 
     const startSystem = () => {
         setHasStarted(true);
-        speak("Welcome Abarnesh. Initializing portfolio interface. Cybersecurity systems online. Access granted.");
+        speak("Welcome back, Abarnesh. Systems are online.");
     };
 
     useEffect(() => {

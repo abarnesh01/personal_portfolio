@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Shield, Monitor, Database, Code2, Globe, Cpu } from "lucide-react";
+import { speak } from "@/components/lib/voice";
 
 const skills = [
   {
@@ -24,7 +25,7 @@ const skills = [
   },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -32,18 +33,22 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }
   },
 };
 
 export default function Skills() {
   return (
     <section className="relative py-32 px-6 md:px-12 bg-[#050505]" id="skills">
+      <motion.div
+        onViewportEnter={() => speak("Accessing technical capabilities")}
+        viewport={{ once: true, amount: 0.5 }}
+      />
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:40px_40px]" />
 

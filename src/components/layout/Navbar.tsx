@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
 import { cn } from "@/components/lib/utils";
+import { speak } from "@/components/lib/voice";
 
 const navLinks = [
     { name: "Home", href: "#" },
@@ -26,6 +27,12 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const handleNavClick = (name: string) => {
+        if (name === "Deployments") speak("Opening projects section");
+        if (name === "Contact") speak("Initializing contact interface");
+        setIsMobileMenuOpen(false);
+    };
 
     return (
         <nav
@@ -55,6 +62,7 @@ export default function Navbar() {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
+                            onClick={() => handleNavClick(link.name)}
                             className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
                         >
                             {link.name}
@@ -93,7 +101,7 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className="text-lg font-medium text-gray-400"
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    onClick={() => handleNavClick(link.name)}
                                 >
                                     {link.name}
                                 </a>
