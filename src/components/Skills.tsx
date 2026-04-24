@@ -75,9 +75,9 @@ export default function Skills() {
           className="mb-16"
         >
           <p className="text-cyan-400 font-mono text-sm uppercase tracking-[0.3em] mb-4">Capabilities</p>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight group">
             Technical{" "}
-            <span className="text-gradient-cyan">Arsenal</span>
+            <span className="text-gradient-cyan group-hover:glitch-text">Arsenal</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl leading-relaxed">
             A comprehensive stack built for offensive security, intelligent defense, and scalable application development.

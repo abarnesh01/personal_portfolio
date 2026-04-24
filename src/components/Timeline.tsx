@@ -47,8 +47,8 @@ export default function Timeline() {
           className="text-center mb-24"
         >
           <p className="text-cyan-400 font-mono text-sm uppercase tracking-[0.3em] mb-4">Progression Log</p>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Professional <span className="text-gradient-cyan">Timeline</span>
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight group">
+            Professional <span className="text-gradient-cyan group-hover:glitch-text">Timeline</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
             A linear progression of systems mastered, certifications earned, and architectural milestones achieved.

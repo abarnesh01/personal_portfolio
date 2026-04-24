@@ -82,8 +82,8 @@ export default function Projects() {
                     className="mb-16"
                 >
                     <p className="text-cyan-400 font-mono text-sm uppercase tracking-[0.3em] mb-4">Tactical Deployments</p>
-                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-                        Selected <span className="text-gradient-cyan">Works</span>
+                    <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight group">
+                        Selected <span className="text-gradient-cyan group-hover:glitch-text">Works</span>
                     </h2>
                     <p className="text-gray-500 text-lg max-w-2xl leading-relaxed">
                         Battle-tested software systems focused on defensive security, AI oversight, and intelligent interfaces.

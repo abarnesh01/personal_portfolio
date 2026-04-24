@@ -7,10 +7,11 @@ import { cn } from "@/components/lib/utils";
 
 const navLinks = [
     { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
+    { name: "Identity", href: "#about" },
+    { name: "Arsenal", href: "#skills" },
+    { name: "Deployments", href: "#projects" },
+    { name: "Timeline", href: "#journey" },
+    { name: "Journal", href: "#blog" },
     { name: "Contact", href: "#contact" },
 ];
 
@@ -62,9 +63,9 @@ export default function Navbar() {
                     <motion.button
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="px-5 py-2 rounded-full bg-gradient-primary text-white text-sm font-semibold hover:opacity-90 transition-opacity glow-blue"
+                        className="px-6 py-2 rounded-xl bg-white/5 border border-white/10 text-cyan-400 text-xs font-mono font-bold hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all glow-blue uppercase tracking-widest"
                     >
-                        Hire Me
+                        [ EXEC_HIRE ]
                     </motion.button>
                 </div>
 
