@@ -8,6 +8,8 @@ import About from "@/components/sections/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Timeline from "@/components/Timeline";
+import Blog from "@/components/Blog";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/layout/Footer";
 import ParticlesBg from "@/components/ui/ParticlesBg";
@@ -48,6 +50,8 @@ export default function Home() {
               <Skills />
               <Projects />
               <Timeline />
+              <Blog />
+              <Testimonials />
               <Contact />
               <Footer />
             </div>
